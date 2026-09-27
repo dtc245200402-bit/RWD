@@ -1,0 +1,147 @@
+/* Thiết lập cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Thanh điều hướng */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    flex-wrap: wrap;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: #bbb;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+    .navbar a:hover {
+        color: white;
+    }
+
+    .navbar a.logo {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .navbar a.active {
+        background-color: #000;
+        color: white;
+        font-weight: bold;
+    }
+
+/* Bố cục chính (Container) */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 100px); /* Đẩy footer xuống dưới */
+}
+
+/* Các cột Sidebar */
+.sidebar {
+    background-color: #f1f1f1;
+    padding: 20px;
+    flex: 1; /* Chiếm 1 phần không gian */
+    min-width: 150px;
+}
+
+    .sidebar.left a {
+        display: block;
+        color: #0066cc;
+        text-decoration: none;
+        margin-bottom: 15px;
+    }
+
+        .sidebar.left a:hover {
+            text-decoration: underline;
+        }
+
+/* Hộp quảng cáo bên phải */
+.ad-box {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Cột giữa */
+.content {
+    flex: 4; /* Chiếm 4 phần không gian (rộng hơn sidebar) */
+    padding: 30px;
+    background-color: white;
+}
+
+    .content h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .content p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #444;
+    }
+
+    .content hr {
+        border: 0;
+        border-top: 1px solid #eee;
+        margin: 20px 0;
+    }
+
+/* Footer */
+.footer {
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- RESPONSIVE CHO MÀN HÌNH NHỎ --- */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: auto;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar a {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+}
